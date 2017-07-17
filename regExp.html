@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="regExp.css">
+	<title>Login page</title>
+<script type="text/javascript">
+	function validateForm()
+	{
+		var x ;
+		var regExp = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+		 x = document.getElementById("username").value;
+		 if(x.match(regExp))
+		 {
+		 	document.myForm.username.focus();
+		 	var regpswd = new RegExp( /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{7,16}$/);
+		 	var y = document.getElementById("password").value;
+		 	if(y.match(regpswd) )
+		 	{
+
+		 		
+		 			confirm("its redirecting to another page ");
+		 			
+		 		
+		 	}
+		 	else{
+		 		alert("password must have atleast one spcl char ");
+		 		return false;
+		 	}
+
+		 }
+		 else{
+		 	alert("Enter a valid email  address");
+		 	return false;
+		 }
+		
+	}
+
+
+
+</script>
+
+
+
+</head>
+<body>
+<div class="container">
+<h1> Login page</h1>
+<form action="registration.html" name="myForm" method="get" >
+<table>
+<tr><th>Email:</th>
+<td>
+<input type="Email" id="username" placeholder="Username" required="required"><br></td></tr>
+<tr><th>Password:</th>
+<td><input type="password" id="password" placeholder="Password" required="required"><br></td></tr>
+<tr><th></th><td><input type="submit" value="submit" onclick = "return validateForm()"></td></tr>
+</table>
+</form>
+</div>
+
+</body>
+</html>
