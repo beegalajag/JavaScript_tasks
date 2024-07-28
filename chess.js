@@ -8,5 +8,5 @@ for(let i=0; i< size; i++){
 		else 
 			line += ' ';
 	}
-	console.log(line, 'i m chaging this on branch');
+	console.log(line)
 }
